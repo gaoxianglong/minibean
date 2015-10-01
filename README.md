@@ -1,5 +1,5 @@
 ![](http://dl.iteye.com/upload/picture/pic/133977/67b3a40c-1c07-3f29-aaf8-dc09e6a4b127.jpg)
-### minibean[![Build Status]]
+### minibean
 简单灵活、性能高效，且无需依赖于任何Web容器都可独立运行的多Bean之间自动赋值映射组件。minibean并不强制要求目标对象与源对象的字段名称一定要保持一致，并且还允许一个源对象对应多个目标对象进行字段的赋值操作。<br>
 
 - minibean的使用手册：http://gao-xianglong.iteye.com/blog/1887820<br>
