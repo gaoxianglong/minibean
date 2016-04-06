@@ -25,8 +25,8 @@ import org.gxl.minibean.core.AnnotationResolver;
  * @author JohnGao
  */
 public class SetParameter extends AnnotationResolver {
-	public <T, K> void executeSetParameter(Field goalObjectField,
-			Field sourceObjectField, T goalObject, K sourceObject) {
+	public <T, K> void executeSetParameter(Field goalObjectField, Field sourceObjectField, T goalObject,
+			K sourceObject) {
 		try {
 			/* 允许向目标对象的私有字段进行赋值操作 */
 			goalObjectField.setAccessible(true);
@@ -34,9 +34,10 @@ public class SetParameter extends AnnotationResolver {
 			/* 允许向源对象的私有字段进行取值操作 */
 			sourceObjectField.setAccessible(true);
 
-			/* 将源对象字段值赋值于目标对象字段 */
-			goalObjectField
-					.set(goalObject, sourceObjectField.get(sourceObject));
+			if (null != sourceObjectField.get(sourceObject)) {
+				/* 将源对象字段值赋值于目标对象字段 */
+				goalObjectField.set(goalObject, sourceObjectField.get(sourceObject));
+			}
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

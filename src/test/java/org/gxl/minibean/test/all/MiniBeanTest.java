@@ -30,15 +30,20 @@ public class MiniBeanTest {
 	@Test
 	public void test1() {
 		TestBeanA sourceObject = new TestBeanA();
-		sourceObject.setId(1);
-		sourceObject.setName("JohnGao");
-		sourceObject.setPwd("123456");
+//		sourceObject.setId(1);
+//		sourceObject.setName("JohnGao");
+//		sourceObject.setPwd("123456");
 
 		TestBeanB goalObject = new TestBeanB();
+		goalObject.setId(10);
+		goalObject.setName("aaa");
+		goalObject.setPwd("bbb");
 		BeanContext.setParam(goalObject, sourceObject);
-		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
-		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
-		Assert.assertEquals(goalObject.getPwd(), sourceObject.getPwd());
+		System.out.println(goalObject.getName());
+		System.out.println(goalObject.getPwd());
+//		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
+//		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
+//		Assert.assertEquals(goalObject.getPwd(), sourceObject.getPwd());
 	}
 
 	@Test
